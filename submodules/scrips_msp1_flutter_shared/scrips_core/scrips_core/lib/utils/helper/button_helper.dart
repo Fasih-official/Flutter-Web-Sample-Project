@@ -35,7 +35,7 @@ Widget textButton(String text,
             : Text(
                 text,
                 style: style ??
-                    labelTextStyle500Weight(
+                    labelTextStyle700Weight(
                         fontSize, enable ? scripsPrimaryLightBlueColor : scripsIconsGreyColor),
               ),
       ),
@@ -131,7 +131,7 @@ Widget roundedCornerRectangularButton(
             borderRadius: BorderRadius.circular(20)),
         child: Text(
           text,
-          style: style ?? labelTextStyle500Weight(15, color),
+          style: style ?? labelTextStyle700Weight(15, color),
         ),
       ),
     );

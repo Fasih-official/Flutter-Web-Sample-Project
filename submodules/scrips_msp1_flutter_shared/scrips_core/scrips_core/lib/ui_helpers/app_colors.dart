@@ -42,7 +42,7 @@ const Color labelTextStyleTextColor =
 final Color successTabColor = Color(0xFF65D24A);
 final Color tabLineGrey = Color(0xFFE5D6D6);
 
-final Color regularTextColor = Color(0xFF485685);
+const Color regularTextColor = Color(0xFF485685);
 final Color graphTextColor = Color(0xFF0161AA);
 final Color searchBGColour = Color(0xFF8E8E93).withOpacity(0.12); //
 

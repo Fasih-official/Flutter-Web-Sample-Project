@@ -24,17 +24,18 @@ TextStyle defaultSubHeaderStyle(color, backgroundColor) => TextStyle(
       backgroundColor: backgroundColor ?? defaultSubHeaderBackgroundColor,
     );
 
-TextStyle labelTextStyle500Weight(double size, color,
+TextStyle labelTextStyle700Weight(double size, color,
         {double letterSpacing,
         double height,
         TextDecoration textDecoration = TextDecoration.none}) =>
     TextStyle(
         fontFamily: languageCode == 'ar' ? Fonts.tajawal : Fonts.roboto,
         fontSize: size,
-        fontWeight: FontWeight.w500,
+        fontWeight: FontWeight.w700,
         color: color ?? textInputColor,
         decoration: textDecoration,
         letterSpacing: letterSpacing,
+        overflow: TextOverflow.ellipsis,
         height: height);
 
 TextStyle boldLabelTextStyle(double size, color,
@@ -90,6 +91,7 @@ TextStyle normalLabelTextStyle(double size, color,
         color: color ?? textInputColor,
         letterSpacing: letterSpacing,
         decoration: decoration,
+        overflow: TextOverflow.ellipsis,
         height: height);
 
 //TextStyle( fontFamily: languageCode=='ar'? Fonts.tajawal:Fonts.roboto,fontSize: 12.0, fontWeight: FontWeight.bold, color: labelTextStyleTextColor)

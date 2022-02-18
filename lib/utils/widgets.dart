@@ -1,5 +1,6 @@
 import 'package:assessment_app/utils/styles.dart';
 import 'package:assessment_app/utils/utils.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:scrips_core/ui_helpers/app_colors.dart';
 import 'package:scrips_core/ui_helpers/text_styles.dart';
@@ -354,8 +355,8 @@ class IconAndText extends StatelessWidget {
 
   const IconAndText({
     Key? key,
-    this.iconUrl='assets/images/ic_badge.png',
-    this.text ='Dashboard',
+    this.iconUrl = 'assets/images/ic_badge.png',
+    this.text = 'Dashboard',
   }) : super(key: key);
 
   @override
@@ -370,6 +371,162 @@ class IconAndText extends StatelessWidget {
         Text(
           text,
           style: normalLabelTextStyle(12, labelTextStyleTextColor),
+        )
+      ],
+    );
+  }
+}
+
+class NameAndValue extends StatelessWidget {
+  final String name, value;
+  final Color nameColor, valueColor;
+
+  const NameAndValue({
+    Key? key,
+    this.name = 'Patient',
+    this.value = 'Arely Caldwell',
+    this.nameColor = labelTextStyleTextColor,
+    this.valueColor = regularTextColor,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        Text(
+          name,
+          style: normalLabelTextStyle(12, nameColor),
+        ),
+        horizontalSpace(),
+        Text(
+          value,
+          style: (valueColor == regularTextColor)
+              ? normalLabelTextStyle(12, valueColor)
+              : boldLabelTextStyle(12, valueColor),
+        ),
+      ],
+    );
+  }
+}
+
+class FieldAndText extends StatelessWidget {
+  final int fieldDivisionRatio;
+  final String text, hint;
+  final bool isManadatory;
+
+  const FieldAndText({
+    Key? key,
+    this.fieldDivisionRatio = 0,
+    this.text = 'Policy Number',
+    this.isManadatory = false,
+    required this.hint,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        RichText(
+          text: TextSpan(
+            children: [
+              TextSpan(
+                text: text,
+                style: labelTextStyle700Weight(12, labelTextStyleTextColor),
+              ),
+              TextSpan(
+                  text: isManadatory ? '*' : '',
+                  style:
+                      labelTextStyle700Weight(12, defaultValidationTextColor)),
+            ],
+          ),
+        ),
+        verticalSpace(height: 5),
+        Row(
+          children: [
+            Expanded(
+              child: Container(
+                decoration: rectangularBgColorBoxDecorationWithRadius(8),
+                child: MyTextField(
+                  verticalPad: 16,
+                  horizontalPad: 10,
+                  hint: hint,
+                ),
+              ),
+            ),
+            Expanded(
+              flex: fieldDivisionRatio,
+              child: SizedBox(),
+            )
+          ],
+        ),
+      ],
+    );
+  }
+}
+
+class HorizontalTextAndIcon extends StatelessWidget {
+  final String text, assetUrl;
+
+  const HorizontalTextAndIcon({
+    Key? key,
+    this.text = 'Included',
+    this.assetUrl = 'assets/images/ic_arrow_dropdown.png',
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        Expanded(
+          child: Text(
+            text,
+            style: normalLabelTextStyle(12, labelTextStyleTextColor),
+          ),
+        ),
+        horizontalSpace(width: 5),
+        Image.asset(
+          assetUrl,
+          height: 12,
+          width: 12,
+        )
+      ],
+    );
+  }
+}
+
+class CircleIconAndText extends StatelessWidget {
+  final String assetURL, name;
+
+  const CircleIconAndText({
+    Key? key,
+    this.assetURL = 'assets/images/ic_tick.png',
+    this.name = 'Mark as\nReviewed',
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        Container(
+          width: 56,
+          height: 56,
+          decoration: rectangularBgColorBoxDecorationWithRadius(56),
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(56),
+            child: Center(
+                child: Image.asset(
+              assetURL,
+              width: 16,
+              height: 16,
+            )),
+          ),
+        ),
+        verticalSpace(height: 5),
+        Text(
+          name,
+          style: normalLabelTextStyle(12, labelTextStyleTextColor),
+          textAlign: TextAlign.center,
         )
       ],
     );
