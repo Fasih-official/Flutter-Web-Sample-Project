@@ -62,8 +62,10 @@ class ImageObservation extends StatelessWidget {
                       InkResponse(
                         onTap: () async {
                           var map = await onTapBrowse();
-                          var baseBloc = BlocProvider.of<BaseBloc>(context);
-                          baseBloc.add(UIEventFilePicker(map: map));
+                          if(map['status'] as bool){
+                            var baseBloc = BlocProvider.of<BaseBloc>(context);
+                            baseBloc.add(UIEventFilePicker(map: map));
+                          }
                         },
                         child: Container(
                           decoration:
@@ -131,9 +133,12 @@ class ImageObservation extends StatelessWidget {
                                       ),
                                       horizontalSpace(),
                                       InkResponse(
-                                        onTap: (){
-                                          var baseBloc = BlocProvider.of<BaseBloc>(context);
-                                          baseBloc.add(UIEventFilePicker(map: {}));
+                                        onTap: () {
+                                          var baseBloc =
+                                              BlocProvider.of<BaseBloc>(
+                                                  context);
+                                          baseBloc
+                                              .add(UIEventFilePicker(map: {}));
                                         },
                                         child: Image.asset(
                                           'assets/images/ic_bin.png',
@@ -195,9 +200,21 @@ class ImageObservation extends StatelessWidget {
     if (isNotEmpty(result)) {
       var Uint8List = result!.files.single.bytes;
       if (isNotEmpty(Uint8List)) {
-        fileMap = {'Uint8List': Uint8List, 'name': result.names.single ?? ''};
+        fileMap = {
+          'Uint8List': Uint8List,
+          'name': result.names.single ?? '',
+          'status':true
+        };
         return fileMap;
+      }else{
+        fileMap = {
+          'status':false
+        };
       }
+    } else {
+      fileMap = {
+        'status':false
+      };
     }
     return fileMap;
   }
