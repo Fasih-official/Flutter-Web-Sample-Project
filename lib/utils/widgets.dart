@@ -240,6 +240,7 @@ class MyTextField extends StatelessWidget {
   TextAlign textAlign;
   String? hint;
   double verticalPad, horizontalPad;
+  String? counterText;
 
   MyTextField({
     Key? key,
@@ -252,6 +253,7 @@ class MyTextField extends StatelessWidget {
     this.hint,
     this.verticalPad = 0.0,
     this.horizontalPad = 0.0,
+    this.counterText = '',
   }) : super(key: key);
 
   @override
@@ -262,6 +264,7 @@ class MyTextField extends StatelessWidget {
           hint: hint,
           verticalPad: verticalPad,
           horizontalPad: horizontalPad,
+          counterText: counterText
         ),
         keyboardType: keyboardType,
         obscureText: obscureText,
@@ -419,13 +422,14 @@ class NameAndValue extends StatelessWidget {
 class FieldAndText extends StatelessWidget {
   int maxLength, minLines, maxLines;
   final int fieldDivisionRatio;
-  final String text, hint;
+  final String? text, hint, counterText;
   final bool isManadatory;
 
   FieldAndText({
     Key? key,
     this.fieldDivisionRatio = 0,
     this.text = 'Policy Number',
+    this.counterText = '',
     this.isManadatory = false,
     this.minLines = 1,
     this.maxLines = 1,
@@ -465,6 +469,7 @@ class FieldAndText extends StatelessWidget {
                   minLines: minLines,
                   maxLines: maxLines,
                   maxLength: maxLength,
+                  counterText: counterText,
                 ),
               ),
             ),

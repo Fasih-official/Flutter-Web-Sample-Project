@@ -56,6 +56,7 @@ class TextObservation extends StatelessWidget {
                     minLines: 5,
                     maxLines: 5,
                     maxLength: 400,
+                    counterText: null,
                   ),
                   verticalSpace(),
                   Row(

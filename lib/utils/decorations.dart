@@ -3,8 +3,7 @@ import 'package:scrips_core/ui_helpers/app_colors.dart';
 
 import 'colors.dart';
 
-appCounterDecoration(color) =>
-    BoxDecoration(
+appCounterDecoration(color) => BoxDecoration(
       shape: BoxShape.circle,
       color: color,
     );
@@ -23,23 +22,20 @@ var appSeparationDarkLineDecoration = BoxDecoration(
   color: textColorLightGrey,
 );
 
-rectangularWhiteBoxDecorationWithRadius(double radius) =>
-    BoxDecoration(
-        shape: BoxShape.rectangle,
-        borderRadius: BorderRadius.circular(radius),
-        color: Colors.white);
+rectangularWhiteBoxDecorationWithRadius(double radius) => BoxDecoration(
+    shape: BoxShape.rectangle,
+    borderRadius: BorderRadius.circular(radius),
+    color: Colors.white);
 
-rectangularBgColorBoxDecorationWithRadius(double radius) =>
-    BoxDecoration(
-        shape: BoxShape.rectangle,
-        borderRadius: BorderRadius.circular(radius),
-        color: bgColor);
+rectangularBgColorBoxDecorationWithRadius(double radius) => BoxDecoration(
+    shape: BoxShape.rectangle,
+    borderRadius: BorderRadius.circular(radius),
+    color: bgColor);
 
-rectangularPurpleBarDecorationWithRadius(double radius) =>
-    BoxDecoration(
-        shape: BoxShape.rectangle,
-        borderRadius: BorderRadius.circular(radius),
-        color: vaccinesColor);
+rectangularPurpleBarDecorationWithRadius(double radius) => BoxDecoration(
+    shape: BoxShape.rectangle,
+    borderRadius: BorderRadius.circular(radius),
+    color: vaccinesColor);
 
 rectangularWhiteBoxDecorationWithRadiusBlackBorder(double radius) =>
     BoxDecoration(
@@ -55,8 +51,8 @@ rectangularWhiteBoxDecorationWithRadiusSelectedBorder(double radius) =>
         border: Border.all(color: appBarColor),
         color: Colors.white);
 
-rectangularWhiteBoxDecorationWithRadiusElevation(double radius,
-    double elevation) =>
+rectangularWhiteBoxDecorationWithRadiusElevation(
+        double radius, double elevation) =>
     BoxDecoration(
         shape: BoxShape.rectangle,
         borderRadius: BorderRadius.circular(radius),
@@ -69,8 +65,8 @@ rectangularWhiteBoxDecorationWithRadiusElevation(double radius,
           ),
         ]);
 
-rectangularBgColorBoxDecorationWithRadiusElevation(double radius,
-    double elevation) =>
+rectangularBgColorBoxDecorationWithRadiusElevation(
+        double radius, double elevation) =>
     BoxDecoration(
         shape: BoxShape.rectangle,
         borderRadius: BorderRadius.circular(radius),
@@ -83,8 +79,8 @@ rectangularBgColorBoxDecorationWithRadiusElevation(double radius,
           ),
         ]);
 
-rectangularWhiteBoxDecorationOffWithRadiusElevation(double radius,
-    double elevation) =>
+rectangularWhiteBoxDecorationOffWithRadiusElevation(
+        double radius, double elevation) =>
     BoxDecoration(
         shape: BoxShape.rectangle,
         borderRadius: BorderRadius.circular(radius),
@@ -97,28 +93,14 @@ rectangularWhiteBoxDecorationOffWithRadiusElevation(double radius,
           ),
         ]);
 
-rectangularLightPurpleBoxDecorationWithRadius(double radius) =>
-    BoxDecoration(
-        shape: BoxShape.rectangle,
-        borderRadius: BorderRadius.circular(radius),
-        color: btnColorLightPurple,);
+rectangularLightPurpleBoxDecorationWithRadius(double radius) => BoxDecoration(
+      shape: BoxShape.rectangle,
+      borderRadius: BorderRadius.circular(radius),
+      color: btnColorLightPurple,
+    );
 
-rectangularAppBarBoxDecorationWithRadiusElevation(double radius,
-    double elevation) =>
-    BoxDecoration(
-        shape: BoxShape.rectangle,
-        borderRadius: BorderRadius.circular(radius),
-        color: appBarColor,
-        boxShadow: [
-          BoxShadow(
-            color: Colors.grey,
-            offset: Offset(0.0, 1.0), //(x,y)
-            blurRadius: elevation,
-          ),
-        ]);
-
-rectangularGreyBoxDecorationWithRadiusElevation(double radius,
-    double elevation) =>
+rectangularAppBarBoxDecorationWithRadiusElevation(
+        double radius, double elevation) =>
     BoxDecoration(
         shape: BoxShape.rectangle,
         borderRadius: BorderRadius.circular(radius),
@@ -131,8 +113,22 @@ rectangularGreyBoxDecorationWithRadiusElevation(double radius,
           ),
         ]);
 
-rectangularDarkGreyBoxDecorationWithRadiusElevation(double radius,
-    double elevation) =>
+rectangularGreyBoxDecorationWithRadiusElevation(
+        double radius, double elevation) =>
+    BoxDecoration(
+        shape: BoxShape.rectangle,
+        borderRadius: BorderRadius.circular(radius),
+        color: appBarColor,
+        boxShadow: [
+          BoxShadow(
+            color: Colors.grey,
+            offset: Offset(0.0, 1.0), //(x,y)
+            blurRadius: elevation,
+          ),
+        ]);
+
+rectangularDarkGreyBoxDecorationWithRadiusElevation(
+        double radius, double elevation) =>
     BoxDecoration(
         shape: BoxShape.rectangle,
         borderRadius: BorderRadius.circular(radius),
@@ -145,8 +141,8 @@ rectangularDarkGreyBoxDecorationWithRadiusElevation(double radius,
           ),
         ]);
 
-rectangularNormalBtnTextColorBoxDecorationWithRadiusElevation(double radius,
-    double elevation) =>
+rectangularNormalBtnTextColorBoxDecorationWithRadiusElevation(
+        double radius, double elevation) =>
     BoxDecoration(
         shape: BoxShape.rectangle,
         borderRadius: BorderRadius.circular(radius),
@@ -159,8 +155,8 @@ rectangularNormalBtnTextColorBoxDecorationWithRadiusElevation(double radius,
           ),
         ]);
 
-rectangularDarkAppBarColorBoxDecorationWithRadiusElevation(double radius,
-    double elevation) =>
+rectangularDarkAppBarColorBoxDecorationWithRadiusElevation(
+        double radius, double elevation) =>
     BoxDecoration(
         shape: BoxShape.rectangle,
         borderRadius: BorderRadius.circular(radius),
@@ -173,19 +169,22 @@ rectangularDarkAppBarColorBoxDecorationWithRadiusElevation(double radius,
           ),
         ]);
 
-densedFieldDecorationWithoutPadding(
-    {hint, verticalPad = 0.0, horizontalPad = 0.0}) =>
+densedFieldDecorationWithoutPadding({
+  hint,
+  verticalPad = 0.0,
+  horizontalPad = 0.0,
+  counterText = '',
+}) =>
     InputDecoration(
-      isDense: true,
-      counterText: '',
-      contentPadding: EdgeInsets.symmetric(
-          vertical: verticalPad, horizontal: horizontalPad),
-      border: InputBorder.none,
-      hintText: hint,
-    );
+        isDense: true,
+        contentPadding: EdgeInsets.symmetric(
+            vertical: verticalPad, horizontal: horizontalPad),
+        border: InputBorder.none,
+        hintText: hint,
+        counterText: counterText);
 
-rectangularTextColorBoxDecorationWithRadiusElevation(double radius,
-    double elevation) =>
+rectangularTextColorBoxDecorationWithRadiusElevation(
+        double radius, double elevation) =>
     BoxDecoration(
         shape: BoxShape.rectangle,
         borderRadius: BorderRadius.circular(radius),
@@ -198,8 +197,8 @@ rectangularTextColorBoxDecorationWithRadiusElevation(double radius,
           ),
         ]);
 
-rectangularContainerBoxDecorationWithRadiusElevation(double radius,
-    double elevation) =>
+rectangularContainerBoxDecorationWithRadiusElevation(
+        double radius, double elevation) =>
     BoxDecoration(
         shape: BoxShape.rectangle,
         borderRadius: BorderRadius.circular(radius),
@@ -212,11 +211,13 @@ rectangularContainerBoxDecorationWithRadiusElevation(double radius,
           ),
         ]);
 
-rectangularCustomColorBoxDecorationWithRadius(double topLeft,
-    double bottomLeft,
-    double bottomRight,
-    double topRight,
-    Color color,) =>
+rectangularCustomColorBoxDecorationWithRadius(
+  double topLeft,
+  double bottomLeft,
+  double bottomRight,
+  double topRight,
+  Color color,
+) =>
     BoxDecoration(
         shape: BoxShape.rectangle,
         borderRadius: BorderRadius.only(
@@ -226,27 +227,23 @@ rectangularCustomColorBoxDecorationWithRadius(double topLeft,
             topRight: Radius.circular(topRight)),
         color: color);
 
-optionsBoxDecoration() =>
-    BoxDecoration(
-        borderRadius: BorderRadius.circular(20),
-        border: Border.all(
-          color: Colors.black,
-          width: 0.6,
-        )
-    );
+optionsBoxDecoration() => BoxDecoration(
+    borderRadius: BorderRadius.circular(20),
+    border: Border.all(
+      color: Colors.black,
+      width: 0.6,
+    ));
 
-selectedOptionsBoxDecoration() =>
-    BoxDecoration(
+selectedOptionsBoxDecoration() => BoxDecoration(
       borderRadius: BorderRadius.circular(20),
-      border: Border.all(
-          color: appBarColor,
-          width: 2.0
-      ),
+      border: Border.all(color: appBarColor, width: 2.0),
     );
 
-ellipticalCustomColorBoxDecorationWithRadius(double x,
-    double y,
-    Color color,) =>
+ellipticalCustomColorBoxDecorationWithRadius(
+  double x,
+  double y,
+  Color color,
+) =>
     BoxDecoration(
         borderRadius: BorderRadius.vertical(
           bottom: Radius.elliptical(
@@ -256,8 +253,8 @@ ellipticalCustomColorBoxDecorationWithRadius(double x,
         ),
         color: color);
 
-rectangularTextColorBoxDecorationWithDarkRadiusElevation(double radius,
-    double elevation) =>
+rectangularTextColorBoxDecorationWithDarkRadiusElevation(
+        double radius, double elevation) =>
     BoxDecoration(
         shape: BoxShape.rectangle,
         borderRadius: BorderRadius.circular(radius),
@@ -270,8 +267,8 @@ rectangularTextColorBoxDecorationWithDarkRadiusElevation(double radius,
           ),
         ]);
 
-rectangularTransparentBoxDecorationWithRadiusElevation(double radius,
-    double elevation) =>
+rectangularTransparentBoxDecorationWithRadiusElevation(
+        double radius, double elevation) =>
     BoxDecoration(
         shape: BoxShape.rectangle,
         borderRadius: BorderRadius.circular(radius),
@@ -284,25 +281,24 @@ rectangularTransparentBoxDecorationWithRadiusElevation(double radius,
           ),
         ]);
 
-rectangularGreyBorderDecorationWithRadius(double radius) =>
-    BoxDecoration(
+rectangularGreyBorderDecorationWithRadius(double radius) => BoxDecoration(
       shape: BoxShape.rectangle,
       borderRadius: BorderRadius.all(Radius.circular(radius)),
       border: Border.all(color: textColorLightGrey.withOpacity(0.4)),
     );
 
-rectangularLighterGreyBoxDecorationWithRadius(double radius) =>
-    BoxDecoration(
-        shape: BoxShape.rectangle,
-        borderRadius: BorderRadius.circular(radius),
-        color: textColorLighterGreyVariation
-    );
+rectangularLighterGreyBoxDecorationWithRadius(double radius) => BoxDecoration(
+    shape: BoxShape.rectangle,
+    borderRadius: BorderRadius.circular(radius),
+    color: textColorLighterGreyVariation);
 
-rectangularAppBarColorBoxDecorationWithRadius(double topLeft,
-    double bottomLeft,
-    double bottomRight,
-    double topRight,
-    Color color,) =>
+rectangularAppBarColorBoxDecorationWithRadius(
+  double topLeft,
+  double bottomLeft,
+  double bottomRight,
+  double topRight,
+  Color color,
+) =>
     BoxDecoration(
         shape: BoxShape.rectangle,
         borderRadius: BorderRadius.only(
@@ -312,10 +308,12 @@ rectangularAppBarColorBoxDecorationWithRadius(double topLeft,
             topRight: Radius.circular(topRight)),
         color: color);
 
-rectangularOrangeColorBoxDecorationWithRadius(double topLeft,
-    double bottomLeft,
-    double bottomRight,
-    double topRight,) =>
+rectangularOrangeColorBoxDecorationWithRadius(
+  double topLeft,
+  double bottomLeft,
+  double bottomRight,
+  double topRight,
+) =>
     BoxDecoration(
         shape: BoxShape.rectangle,
         borderRadius: BorderRadius.only(

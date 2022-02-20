@@ -1092,7 +1092,10 @@ class _DashboardScreenState extends State<DashboardScreen> {
                                         child: (state.selectedObservation ==
                                                 'observation_text')
                                             ? TextObservation()
-                                            : ImageObservation(),
+                                            : (state.selectedObservation ==
+                                                    'observation_file')
+                                                ? ImageObservation()
+                                                : Container(),
                                       )
                                     : Container(),
                                 Container(
@@ -1118,13 +1121,14 @@ class _DashboardScreenState extends State<DashboardScreen> {
         var baseBloc = BlocProvider.of<BaseBloc>(context);
         if (selectedIndex == index) {
           baseBloc.add(UIEventAddObservation(selectedIndex: -1));
+          selectedIndex = -1;
         } else {
           baseBloc.add(UIEventAddObservation(
             selectedIndex: index,
             selectedObservation: selectedObservation,
           ));
+          selectedIndex = index;
         }
-        selectedIndex = index;
       },
     ), true);
   }
