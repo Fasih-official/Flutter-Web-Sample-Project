@@ -18,6 +18,7 @@ import 'package:scrips_core/widgets/general/circle_image.dart';
 import 'package:scrips_core/widgets/general/custom_table_list.dart';
 import 'package:scrips_core/widgets/general/field_and_label.dart';
 import 'package:scrips_core/widgets/stats_counter.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import '../../utils/utils.dart';
 
@@ -75,7 +76,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                                 Expanded(
                                   child: Center(
                                     child: Text(
-                                      'Review claim',
+                                      '${AppLocalizations.of(context)!.reviewClaim}',
                                       style: labelTextStyle700Weight(
                                           18, vaccinesColor),
                                     ),
