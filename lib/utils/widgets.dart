@@ -133,7 +133,7 @@ class CustomizedButton extends StatelessWidget {
                   ),
             Text(
               text,
-              style: regularWhiteText14(textColor),
+              style: labelTextStyle700Weight(12,textColor),
             ),
           ],
         ),
@@ -235,7 +235,7 @@ class GenericCard extends StatelessWidget {
 
 class MyTextField extends StatelessWidget {
   bool obscureText;
-  int textLength;
+  int maxLength, minLines, maxLines;
   TextInputType keyboardType;
   TextAlign textAlign;
   String? hint;
@@ -244,7 +244,9 @@ class MyTextField extends StatelessWidget {
   MyTextField({
     Key? key,
     this.obscureText = false,
-    this.textLength = 100,
+    this.maxLength = 80,
+    this.minLines = 1,
+    this.maxLines = 1,
     this.keyboardType = TextInputType.text,
     this.textAlign = TextAlign.start,
     this.hint,
@@ -257,11 +259,16 @@ class MyTextField extends StatelessWidget {
     return Center(
       child: TextField(
         decoration: densedFieldDecorationWithoutPadding(
-            hint: hint, verticalPad: verticalPad, horizontalPad: horizontalPad),
+          hint: hint,
+          verticalPad: verticalPad,
+          horizontalPad: horizontalPad,
+        ),
         keyboardType: keyboardType,
         obscureText: obscureText,
         textAlign: textAlign,
-        maxLength: textLength,
+        maxLength: maxLength,
+        minLines: minLines,
+        maxLines: maxLines,
       ),
     );
   }
@@ -410,15 +417,19 @@ class NameAndValue extends StatelessWidget {
 }
 
 class FieldAndText extends StatelessWidget {
+  int maxLength, minLines, maxLines;
   final int fieldDivisionRatio;
   final String text, hint;
   final bool isManadatory;
 
-  const FieldAndText({
+  FieldAndText({
     Key? key,
     this.fieldDivisionRatio = 0,
     this.text = 'Policy Number',
     this.isManadatory = false,
+    this.minLines = 1,
+    this.maxLines = 1,
+    this.maxLength = 80,
     required this.hint,
   }) : super(key: key);
 
@@ -451,6 +462,9 @@ class FieldAndText extends StatelessWidget {
                   verticalPad: 16,
                   horizontalPad: 10,
                   hint: hint,
+                  minLines: minLines,
+                  maxLines: maxLines,
+                  maxLength: maxLength,
                 ),
               ),
             ),
@@ -467,11 +481,15 @@ class FieldAndText extends StatelessWidget {
 
 class HorizontalTextAndIcon extends StatelessWidget {
   final String text, assetUrl;
+  final bool normalText;
+  final Color textColor;
 
   const HorizontalTextAndIcon({
     Key? key,
     this.text = 'Included',
     this.assetUrl = 'assets/images/ic_arrow_dropdown.png',
+    this.normalText = true,
+    this.textColor = labelTextStyleTextColor,
   }) : super(key: key);
 
   @override
@@ -481,7 +499,9 @@ class HorizontalTextAndIcon extends StatelessWidget {
         Expanded(
           child: Text(
             text,
-            style: normalLabelTextStyle(12, labelTextStyleTextColor),
+            style: normalText
+                ? normalLabelTextStyle(12, textColor)
+                : labelTextStyle700Weight(12, textColor),
           ),
         ),
         horizontalSpace(width: 5),

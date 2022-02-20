@@ -13,6 +13,11 @@ var appSeparationLineDecoration = BoxDecoration(
   color: Colors.grey.withOpacity(0.3),
 );
 
+var appSeparationLineSkyBlue = BoxDecoration(
+  shape: BoxShape.rectangle,
+  color: normalBtnTextColor,
+);
+
 var appSeparationDarkLineDecoration = BoxDecoration(
   shape: BoxShape.rectangle,
   color: textColorLightGrey,
@@ -64,6 +69,34 @@ rectangularWhiteBoxDecorationWithRadiusElevation(double radius,
           ),
         ]);
 
+rectangularBgColorBoxDecorationWithRadiusElevation(double radius,
+    double elevation) =>
+    BoxDecoration(
+        shape: BoxShape.rectangle,
+        borderRadius: BorderRadius.circular(radius),
+        color: bgColor,
+        boxShadow: [
+          BoxShadow(
+            color: Colors.grey,
+            offset: Offset(0.0, 1.0), //(x,y)
+            blurRadius: elevation,
+          ),
+        ]);
+
+rectangularWhiteBoxDecorationOffWithRadiusElevation(double radius,
+    double elevation) =>
+    BoxDecoration(
+        shape: BoxShape.rectangle,
+        borderRadius: BorderRadius.circular(radius),
+        color: offWhite,
+        boxShadow: [
+          BoxShadow(
+            color: Colors.grey,
+            offset: Offset(0.0, 1.0), //(x,y)
+            blurRadius: elevation,
+          ),
+        ]);
+
 rectangularLightPurpleBoxDecorationWithRadius(double radius) =>
     BoxDecoration(
         shape: BoxShape.rectangle,
@@ -104,6 +137,20 @@ rectangularDarkGreyBoxDecorationWithRadiusElevation(double radius,
         shape: BoxShape.rectangle,
         borderRadius: BorderRadius.circular(radius),
         color: darkGreyColor,
+        boxShadow: [
+          BoxShadow(
+            color: Colors.grey,
+            offset: Offset(0.0, 1.0), //(x,y)
+            blurRadius: elevation,
+          ),
+        ]);
+
+rectangularNormalBtnTextColorBoxDecorationWithRadiusElevation(double radius,
+    double elevation) =>
+    BoxDecoration(
+        shape: BoxShape.rectangle,
+        borderRadius: BorderRadius.circular(radius),
+        color: normalBtnTextColor,
         boxShadow: [
           BoxShadow(
             color: Colors.grey,

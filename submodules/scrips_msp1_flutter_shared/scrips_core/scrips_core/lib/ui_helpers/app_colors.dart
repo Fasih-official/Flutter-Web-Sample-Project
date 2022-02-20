@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 const Color lightGrey = Color(0xFFF4F7F8);
+const Color offWhite = Color(0xFFEEEEEE);
 final Color red = Colors.red[400];
 
 final Color bgColor = lightGrey; //getColorFromHex('#F4F7F8');

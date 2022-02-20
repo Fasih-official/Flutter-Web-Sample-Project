@@ -1,4 +1,4 @@
-import 'package:assessment_app/screens/dashboard_screen.dart';
+import 'package:assessment_app/screens/dashboard/dashboard_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:scrips_core/di/dependency_injection.dart';
 import 'package:scrips_core/widgets/general/field_and_label.dart';

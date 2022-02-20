@@ -36,6 +36,7 @@ dependencies:
   cupertino_icons: ^0.1.2
   flutter_bloc: ^7.3.2
   get_it: ^7.2.0
+  file_picker: ^4.4.0
   scrips_core:
     path: ./submodules/scrips_msp1_flutter_shared/scrips_core/scrips_core
 
