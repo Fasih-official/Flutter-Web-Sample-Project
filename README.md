@@ -1,4 +1,4 @@
-# assessment_app
+# Flutter Web Sample Project
 
 A new Flutter project.
 
